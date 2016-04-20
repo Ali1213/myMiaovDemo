@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业1</title>
+<style type="text/css">
+*{
+	margin:0px;
+	padding:0px;
+}
+#wrap {
+	margin-left:10px;
+	margin-top:15px;
+	width:735px;
+	height:420px;
+	border:1px solid #efefef;
+	background-color:#efefef;
+	font:23px/49px "宋体";
+	text-indent:25px;
+	overflow:hidden;
+}
+#box{
+	margin-left:25px;
+	margin-top:3px;
+	border:4px solid #fff;
+	width:100px;
+	height:100px;
+	background:#fff;
+
+}
+#change {
+	display:inline-block;
+	width:100px;
+	height:40px;
+	color:#fff;
+	background:#ff0000;
+	font-size:15px;
+} 
+
+#select{
+	display:none;
+	margin:0;
+	width:300px;
+	height:200px;	
+	border:20px solid #9c949c;
+	background:#fff;
+	font-size:16px;
+	padding:0;
+
+}
+ul li{list-style:none;}
+.elements {
+	display:inline-block;
+	padding:0;
+	border:1px solid #cococo;
+	width:34px;
+	height:30px;
+	background:#efefef;
+	margin:5px;
+	text-align:center;
+	font-size:11px/30px "宋体";
+}
+div table #red {
+	background:red;
+}
+div table #yellow {
+	background:yellow;
+}
+div table #blue {
+	background:blue;
+}
+.elements:hover{
+	background:orange;
+	color:#fff;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		请为下面的DIV设置样式：<span id="change">点击设置</span>
+		<div id="box"></div>
+
+	</div>
+			<div id="select">
+			<table>
+				<tbody>
+					<td>请选择背景色：</td>
+					<td><span class="elements" id="red">红</span>
+								 <span class="elements" id="yellow">黄</span> 
+								 <span class="elements" id="blue">蓝</span></td>
+				</tbody>
+				<tbody>
+					<td>请选择宽（px）：</td>
+					<td><span class="elements" id="w_200">200</span>
+								<span class="elements" id="w_300">300</span>
+						 		<span class="elements" id="w_400" >400</span></td>				
+				</tbody>
+				<tbody>
+					<td>请选择高（px）：</td>
+					<td><span class="elements" id="h_200">200</span> 
+						 		<span class="elements" id="h_300">300</span> 
+						 		<span class="elements" id="h_400">400</span></td>
+				</tbody>
+			</table>
+				<form method="post" action="">
+				<input type="submit" value="恢复" id="reset">
+				<input type="submit" value="确定" id="ok">
+				</form>
+		</div>
+<script>
+	 var change = document.getElementById('change')
+	// var red = document.getElementById('red')
+	var yellow = document.getElementById('yellow')
+	var blue = document.getElementById('blue')
+	 var w_200 = document.getElementById('w_200')
+	 var w_300 = document.getElementById('w_300')
+	 var w_400 = document.getElementById('w_400')
+	 var h_200 = document.getElementById('h_200')
+	 var h_300 = document.getElementById('h_300')
+	 var h_400 = document.getElementById('h_400')
+	 var box = document.getElementById('box')
+	var reset = document.getElementById('reset')
+	var ok = document.getElementById('ok')
+	var select = document.getElementById('select')
+	change.onclick =function(){
+		select.style.display ="block"
+	}
+	 red.onclick = function() {box.style.background = 'red'}
+	 yellow.onclick =function(){box.style.background ="yellow"}
+	 blue.onclick =function(){box.style.background ="blue"}
+	 w_200.onclick = function(){
+	 	box.style.width ="200px"
+	 }
+	 w_300.onclick = function(){
+	 	box.style.width ="300px"
+	 }
+	 w_400.onclick = function(){
+	 	box.style.width ="400px"
+	 }
+	 h_200.onclick = function(){
+	 	box.style.height ="200px"
+	 }
+	 h_300.onclick = function(){
+	 	box.style.height ="300px"
+	 }
+	 h_400.onclick = function(){
+	 	box.style.height ="400px"
+	 }
+	 reset.onclick =function(){
+	 	box.style.width ="100px"
+	 	box.style.width ="100px"
+	 	box.style.background ="white"
+	 }
+	 ok.onclick = function(){
+	 	select.style.display ="none"
+	 }
+</script>
+</body>
+</html>
